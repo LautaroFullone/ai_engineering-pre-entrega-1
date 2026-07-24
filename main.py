@@ -6,8 +6,6 @@ Cómo elegir proveedor sin tocar el código:
     python main.py openai
     python main.py anthropic
     python main.py gemini
-
-Ejecutá desde la raíz del proyecto (la carpeta que contiene /src).
 """
 
 import asyncio
@@ -61,6 +59,7 @@ async def run(provider: Provider) -> None:
 def main() -> None:
     # Lee el proveedor del primer argumento de la terminal; default gemini.
     arg = sys.argv[1].lower() if len(sys.argv) > 1 else "gemini"
+
     try:
         provider = Provider(arg)
     except ValueError:
