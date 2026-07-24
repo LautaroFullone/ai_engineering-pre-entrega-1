@@ -1,6 +1,4 @@
 """
-Script de validación. Prueba el cliente en modo normal y en streaming.
-
 Cómo elegir proveedor sin tocar el código:
     python main.py                 -> usa gemini (default, tiene free tier)
     python main.py openai
@@ -16,8 +14,7 @@ from src.config import load_settings
 from src.manager import AsyncLLMManager
 from src.schemas import ChatMessage, ModelConfig, Provider, Role
 
-# Modelo por defecto de cada proveedor. Elegí los más baratos/rápidos para
-# practicar. Podés cambiarlos por el que tengas disponible en tu cuenta.
+# Modelo por defecto de cada proveedor.
 DEFAULT_MODELS = {
     Provider.OPENAI: "gpt-4o-mini",
     Provider.ANTHROPIC: "claude-3-5-haiku-latest",

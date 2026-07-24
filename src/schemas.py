@@ -52,7 +52,7 @@ class ModelResponse(BaseModel):
     """
     Respuesta unificada. Sin importar si respondió OpenAI, Anthropic o Gemini,
     el resto de tu programa siempre recibe este mismo objeto. Ese es el punto
-    de la abstracción: normalizás las diferencias entre SDKs en un solo lugar.
+    de la abstracción: normalizar las diferencias entre SDKs en un solo lugar.
     """
 
     provider: Provider
@@ -63,11 +63,9 @@ class ModelResponse(BaseModel):
 class Settings(BaseModel):
     """
     Contenedor de secretos. `SecretStr` evita que las API keys aparezcan por
-    accidente en logs o en un print(): si imprimís este objeto, ves
-    '**********' en lugar de la key real. Buena práctica de seguridad básica.
+    accidente en logs o en un print(): '**********'
 
-    Para leer el valor real usás `.get_secret_value()` (lo hace cada cliente
-    internamente, solo al momento de instanciar el SDK).
+    Para leer el valor real se usa `.get_secret_value()`
     """
 
     openai_api_key: SecretStr | None = None

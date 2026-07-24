@@ -1,8 +1,3 @@
-"""
-Los clientes: una clase base abstracta que define el "contrato" (qué métodos
-DEBE tener todo cliente) y tres implementaciones concretas.
-"""
-
 from abc import ABC, abstractmethod
 from collections.abc import AsyncIterator
 
@@ -79,7 +74,7 @@ class OpenAIClient(BaseLLMClient):
     def __init__(self, config: ModelConfig, api_key: str) -> None:
         super().__init__(config, api_key)
         # Import local: solo cargamos el SDK cuando realmente se usa este cliente.
-        # Así, si solo probás con Gemini, no necesitás tener instalado openai.
+        # Si solo probás con Gemini, no necesitás tener instalado openai.
         from openai import AsyncOpenAI
 
         self._client = AsyncOpenAI(api_key=api_key)

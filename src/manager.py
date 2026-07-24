@@ -1,10 +1,7 @@
 """
-El AsyncLLMManager: la pieza que la rúbrica valora en un 35%.
-
-Es la ÚNICA clase que tu lógica de negocio necesita conocer. Vos le pasás una
-config (qué proveedor, qué modelo) y él se encarga de instanciar el cliente
-correcto por debajo (Factory Pattern). Cambiar de OpenAI a Gemini es cambiar
-un string, no reescribir código.
+El AsyncLLMManager:  ÚNICA clase que conoce lógica de negocio. Se le pasa una
+config (qué proveedor, qué modelo) y se encarga de instanciar el cliente
+correcto por debajo (Factory Pattern).
 """
 
 from collections.abc import AsyncIterator
