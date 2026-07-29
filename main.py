@@ -18,7 +18,7 @@ from src.schemas import ChatMessage, ModelConfig, Provider, Role
 DEFAULT_MODELS = {
     Provider.OPENAI: "gpt-4o-mini",
     Provider.ANTHROPIC: "claude-3-5-haiku-latest",
-    Provider.GEMINI: "gemini-2.5-flash",
+    Provider.GEMINI: "gemini-3.5-flash",
 }
 
 PROMPT = "¿Qué es la entropía? Respondé en 2 o 3 frases."
